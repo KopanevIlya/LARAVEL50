@@ -30,8 +30,14 @@ Route::middleware('auth')->group(function () {
     Route::post('/cart/remove/{property}', [CartController::class, 'remove'])->name('cart.remove');
     Route::post('/cart/decrease/{property}', [CartController::class, 'decrease'])->name('cart.decrease');
     Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
+    
+    
     Route::get('/chats', [ChatController::class, 'index'])->name('chats');
     Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
+    Route::post('/chat', [ChatController::class, 'store'])->name('chat.store');
+    Route::put('/chat/{message}', [ChatController::class, 'update'])->name('chat.update');
+    Route::delete('/chat/{message}', [ChatController::class, 'destroy'])->name('chat.destroy');
+
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

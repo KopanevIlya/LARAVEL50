@@ -7,7 +7,6 @@ defineProps({
     properties:Array
 })
 
-
 const addToCart = (id)=>{
     router.post(route('cart.add',id))
 }
@@ -18,8 +17,6 @@ const addToCart = (id)=>{
         <Head title="Ювелирные изделия" />
                 <AuthenticatedLayout>
 
-
-
                     <div class="properties-page">
 
                         <div>
@@ -27,11 +24,6 @@ const addToCart = (id)=>{
                             
                          </div>
 
-
-
-
-
-                       
                         <div v-for="property in properties" :key="property.id" class="properties-grid">
                             <div class="property-card">
                                 <h3>{{property.title}}</h3>
